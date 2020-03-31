@@ -16,10 +16,10 @@ resource "azurerm_subnet" "private" {
 
   enforce_private_link_endpoint_network_policies = true
 
-  # work around for https://github.com/terraform-providers/terraform-provider-azurerm/issues/2358
-  lifecycle {
-    ignore_changes = [network_security_group_id, route_table_id]
-  }
+  # # work around for https://github.com/terraform-providers/terraform-provider-azurerm/issues/2358
+  # lifecycle {
+  #   ignore_changes = [network_security_group_id]
+  # }
 }
 
 resource "azurerm_subnet_network_security_group_association" "NSGAssociation" {
